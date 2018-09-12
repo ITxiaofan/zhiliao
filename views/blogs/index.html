@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+</head>
+<style>
+    table,th,tr,td{
+        border: 1px solid #000;
+    }
+    th:nth-child(2){
+        width: 500px;
+    }
+    th:nth-child(3),th:nth-child(4){
+        width: 170px;
+    }
+    
+</style>
+
+<body>
+    <h1>日志列表</h1>
+    <form>
+        <div>
+            关键字：
+            <input type="text" name="keyword">
+            发表日期：<input type="text" name="start_date">~<input type="text" name="end_date">
+            是否显示：<input type="radio" name="is_show" value="" checked>全部
+                     <input type="radio" name="is_show" value="1">显示
+                     <input type="radio" name="is_show" value="0">不显示
+            <input type="submit" value="搜索">
+        </div>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th >标题</th>
+            <th>发表日期</th>
+            <th>修改日期</th>
+            <th>是否显示</th>
+            <th>浏览量</th>
+            <th>操作</th>
+        </tr>
+        <?php foreach($data as $v): ?>
+        <tr>
+            <td><?=$v['id']?></td>
+            <td><?=$v['title']?></td>
+            <td><?=$v['created_at']?></td>
+            <td><?=$v['updata_at']?></td>
+            <td><?=$v['is_show']==1?'显示':'不显示'?></td>
+            <td><?=$v['display']?></td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+
+    </table>
+</body>
+
+</html>

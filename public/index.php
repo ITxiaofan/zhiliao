@@ -11,6 +11,7 @@ spl_autoload_register('autoload');
 // 添加路由
 // 获取url上的路径
 if(isset($_SERVER['PATH_INFO'])){
+
     $pathInfo = $_SERVER['PATH_INFO'];
     // 根据/转成数组
     $pathInfo = explode('/',$pathInfo);
@@ -33,7 +34,7 @@ if(isset($_SERVER['PATH_INFO'])){
 $fullController = 'controllers\\'.$controller;
 
 $_C = new $fullController;
-$_C->$action;
+$_C->$action();
 
 function view($viewFileName,$data = []){
     // 解压数组成变量
