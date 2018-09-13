@@ -43,3 +43,16 @@ function view($viewFileName,$data = []){
     // 加载视图
     require(ROOT.'views/'.$path);
 }
+
+function getUrlParams($except = []){
+
+    foreach($except as  $v){
+
+        unset($_GET[$v]);
+    }
+    $str = '';
+    foreach($_GET as $k => $v){
+        $str .= "$k=$v&";
+    }
+    return $str;
+}

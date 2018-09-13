@@ -15,7 +15,17 @@
     th:nth-child(3),th:nth-child(4){
         width: 170px;
     }
-    
+    .fanye a{
+        padding: 8px;
+        background-color: rgb(86, 166, 185);
+        margin-left: 3px;
+        color: rgb(34, 18, 175);
+    }
+    .active{
+        font-size: 25px;
+        color: red;
+        text-decoration: none;
+    }
 </style>
 
 <body>
@@ -36,10 +46,16 @@
         <tr>
             <th>ID</th>
             <th >标题</th>
-            <th>发表日期</th>
+            <th>发表日期
+                <a href="?<?=getUrlParams(['odby','odway'])?>odby=date&odway=asc">↑</a>
+                <a href="?<?=getUrlParams(['odby','odway'])?>odby=date&odway=desc">↓</a>
+            </th>
             <th>修改日期</th>
             <th>是否显示</th>
-            <th>浏览量</th>
+            <th>浏览量
+                <a href="?<?=getUrlParams(['odby','odway'])?>odby=display&odway=asc">↑</a>
+                <a href="?<?=getUrlParams(['odby','odway'])?>odby=display&odway=desc">↓</a>
+            </th>
             <th>操作</th>
         </tr>
         <?php foreach($data as $v): ?>
@@ -59,6 +75,9 @@
         <?php endforeach; ?>
 
     </table>
+    <br>
+    <div class="fanye"><?=$btns?></div>
+    
 </body>
 
 </html>

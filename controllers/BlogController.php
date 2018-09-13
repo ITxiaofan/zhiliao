@@ -35,6 +35,51 @@ class BlogController{
         // echo "<pre>";
         // var_dump($error);
         // echo "SELECT * FROM blogs WHERE $where";
+
+
+
+        /******************排序****************** */
+        // 默认排序
+        $odby = 'created_at';
+        $odway = 'desc';
+        if(isset($_GET['odby']) && $_GET['odby'] == 'display'){
+            $odby = 'display';
+        }
+        if(isset($_GET['odway']) && $_GET['odway'] == 'asc'){
+            $odway = 'asc';
+        }
+        /********************翻页********************** */
+        $perpage = 15;  //每页条数
+        // 接收当前页码
+        $page = isset($_GET['page']) ? max(1,(int)$_GET['page']) : 1;
+        // 计算开始的下标
+        $offset = ($page-1)*$perpage;
+        // 制作按钮
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM blogs WHERE $where");
+        $stmt->execute($value);
+        $count = $stmt->fetch(PDO::FETCH_COLUMN);
+        // var_dump($count);
+        // 计算总页数
+        $pageCount = ceil($count / $perpage);
+        $btn = '';
+
+        for($i=1;$i<=$pageCount;$i++){
+
+            $params = \getUrlParams(['page']);
+            // if($page == $i){
+            //     $btns .= "<a class='active' href='?{$params}page=$i'> $i </a>";
+            // }else{
+            //     $btns .= "<a href='?{$params}page=$i'> $i </a>";
+            // }
+            $class = $page==$i ? "active" : '';
+            $btns .= "<a class='$class' href='?{$params}page=$i'> $i </a>";
+        }
+
+        // 预处理
+        $stmt = $pdo->prepare("SELECT * FROM blogs WHERE $where ORDER BY $odby $odway LIMIT $offset,$perpage");
+        // 执行SQL
+        $stmt->execute($value);
+
         //取出数据
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // echo "<pre>";
@@ -43,6 +88,7 @@ class BlogController{
         // 加载视图
         view('blogs.index',[
             'data'=>$data,
+            'btns'=>$btns,
         ]);
     }
 }
