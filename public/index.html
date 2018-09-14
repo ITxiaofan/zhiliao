@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+</head>
+<style>
+    table,th,tr,td{
+        border: 1px solid #000;
+    }
+    th:nth-child(2){
+        width: 500px;
+    }
+    th:nth-child(3),th:nth-child(4){
+        width: 170px;
+    }
+    .fanye a{
+        padding: 8px;
+        background-color: rgb(86, 166, 185);
+        margin-left: 3px;
+        color: rgb(34, 18, 175);
+    }
+    .active{
+        font-size: 25px;
+        color: red;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <h1>日志列表</h1>
+    <form>
+        <div>
+            关键字：
+            <input type="text" name="keyword">
+            发表日期：<input type="text" name="start_date">~<input type="text" name="end_date">
+            是否显示：<input type="radio" name="is_show" value="" checked>全部
+                     <input type="radio" name="is_show" value="1">显示
+                     <input type="radio" name="is_show" value="0">不显示
+            <input type="submit" value="搜索">
+        </div>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th >标题</th>
+            <th>发表日期
+                <a href="?odby=date&odway=asc">↑</a>
+                <a href="?odby=date&odway=desc">↓</a>
+            </th>
+            <th>修改日期</th>
+            <th>是否显示</th>
+            <th>浏览量
+                <a href="?odby=display&odway=asc">↑</a>
+                <a href="?odby=display&odway=desc">↓</a>
+            </th>
+            <th>操作</th>
+        </tr>
+                <tr>
+            <td>302</td>
+            <td>苛峭慨彩操错铅瘸毯惠刀矢雷糜莽凤催扇蛇肆蹬逻画晚牛端芒溶谭</td>
+            <td>2018-09-11 21:34:54</td>
+            <td>2018-09-11 21:34:54</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>303</td>
+            <td>颗浑峡吐谎捎燃烫肌浚盾溺踌敞渺虏卯虚苯绥财绷鹤到辨救鞋围蝗蛇铅扑瓦拣触稻淬锻害笔剿舶垂刑</td>
+            <td>2018-09-11 21:34:54</td>
+            <td>2018-09-11 21:34:54</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>301</td>
+            <td>标题1234567</td>
+            <td>2018-09-11 21:34:53</td>
+            <td>2018-09-11 21:34:53</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>291</td>
+            <td>搏菜痕设葛纫共熟谦昆稗顿惜败巷逝讹仁摔抄视枯想谅螺悍溉妈妊饱加谓辱绘辟渴潭横贺磊驴屠寐弛夸</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>292</td>
+            <td>窗拈茨沛骋痞任切寞辟祷底诲查很痢蓝尺彩采捅杏特艘享附怜搐俊聪咐怜肪拖洪划募渤配</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>293</td>
+            <td>惯骚绢请脸捶苍汞匪虐狗颇脱匡蔚愧膜马禽袍楔蔼害倦肠伺罢蚂腊维锌抄贾每捷拈烂</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>294</td>
+            <td>俊怖兑赤水狮镜策奶斑鞘挺侗凭眉屉哦氮汝吹翔疙抄辛类缮叉墨链刺侥砍充南吝怠健婪缕驹冒投娥衬靛贰插</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>295</td>
+            <td>韧耸耿袒办玩氖揣纽绣釜嫡肮啼奶辈陡保怂癌具吻外岛滩涪裁庆巴滤们涸合系喀劫税并仕速琴鸡侩</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>296</td>
+            <td>洁玩挠缝坡清备痕煽阶鲁貉蹿铃衰呸蠕税馆饶</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>297</td>
+            <td>俏搁麓阀厕傲拐笑涛退掠沪撮缄酗哄畴嚎嫌汉徘釜沛歪乌疯放舌当诉锭隶摹旧锤獭挝滔谋反遁篇牛睛护式纤夏</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>298</td>
+            <td>茹雷拘罚宽宦鸽膛广你率笛晒卵线镶桔淌鲤筷为霓脱扰锋沃捍钢</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>299</td>
+            <td>伐驴逼躬沦蛇阀融虐会促避颅龋泊庙时落鸽士衡肉类崇芭矗惭睦席邯钦叮坦疤是测</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>300</td>
+            <td>棘阔撅评省碉抠司楞桐恨炉纤敝镁湿拐砍写耐柑淬晨扔侈苗黑拓刚奸腥燎盼顾吧椒青扦挛屠蜗前煌沙狙妓侥堡镰</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>2018-09-11 21:06:05</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>265</td>
+            <td>势酒贺呜瑟踢土鸵汾睡动袖荒辖酚房泌岛搽华取赋隆揣控圣苹舵淮香嫡</td>
+            <td>2018-09-11 21:06:04</td>
+            <td>2018-09-11 21:06:04</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+                <tr>
+            <td>266</td>
+            <td>墩洗兴颠崇极觅俊晃贡篱揽贬脾鹿拍吗堂蜗常托疆人商炊沥冗灭钢赊坊篙凹家</td>
+            <td>2018-09-11 21:06:04</td>
+            <td>2018-09-11 21:06:04</td>
+            <td>显示</td>
+            <td>0</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+
+        
+    </table>
+    <br>
+    <div class="fanye"><a class='active' href='?page=1'> 1 </a><a class='' href='?page=2'> 2 </a><a class='' href='?page=3'> 3 </a><a class='' href='?page=4'> 4 </a><a class='' href='?page=5'> 5 </a><a class='' href='?page=6'> 6 </a><a class='' href='?page=7'> 7 </a><a class='' href='?page=8'> 8 </a><a class='' href='?page=9'> 9 </a><a class='' href='?page=10'> 10 </a><a class='' href='?page=11'> 11 </a><a class='' href='?page=12'> 12 </a><a class='' href='?page=13'> 13 </a><a class='' href='?page=14'> 14 </a><a class='' href='?page=15'> 15 </a><a class='' href='?page=16'> 16 </a><a class='' href='?page=17'> 17 </a><a class='' href='?page=18'> 18 </a><a class='' href='?page=19'> 19 </a><a class='' href='?page=20'> 20 </a><a class='' href='?page=21'> 21 </a></div>
+    
+</body>
+
+</html>

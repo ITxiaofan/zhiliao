@@ -3,10 +3,6 @@ namespace controllers;
 use PDO;
 class BlogController{
     public function index(){
-        // $host = '127.0.0.1';
-        // $dbname = 'blog1';
-        // $user = 'root';
-        // $pass = '123456';
         // 连接数据库
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=blog1','root','123456');
         // 设置编码
@@ -35,8 +31,6 @@ class BlogController{
         // echo "<pre>";
         // var_dump($error);
         // echo "SELECT * FROM blogs WHERE $where";
-
-
 
         /******************排序****************** */
         // 默认排序
@@ -79,16 +73,43 @@ class BlogController{
         $stmt = $pdo->prepare("SELECT * FROM blogs WHERE $where ORDER BY $odby $odway LIMIT $offset,$perpage");
         // 执行SQL
         $stmt->execute($value);
-
         //取出数据
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // echo "<pre>";
         // var_dump($data);
         // die;
+
         // 加载视图
         view('blogs.index',[
             'data'=>$data,
             'btns'=>$btns,
         ]);
+
     }
+    public function content_to_html(){
+        // 取出日志数据
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=blog1','root','123456');
+        $pdo->exec('SET NAMES utf8');
+
+        $stmt = $pdo->query('SELECT * FROM blogs');
+        $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        ob_start();
+        // 生成静态页
+        foreach($blogs as $v)
+        {
+            // 加载视图
+            view('blogs.content', [
+                'blog' => $v,
+            ]);
+            // 取出缓冲区的内容
+            $str = ob_get_contents();
+            // 生成静态页
+            file_put_contents(ROOT.'public/contents/'.$v['id'].'.html', $str);
+            // 清空缓冲区
+            ob_clean();
+        }
+
+    }
+
 }
