@@ -1,7 +1,8 @@
 <?php
 // 当前文件的绝对路径
 define('ROOT',dirname(__FILE__).'/../');
-
+// 引入conposer自动加载类
+require(ROOT.'vendor/autoload.php');
 function autoload($class){
    $path = str_replace('\\','/',$class);
     require(ROOT.$path.'.php');
