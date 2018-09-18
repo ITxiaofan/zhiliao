@@ -8,27 +8,33 @@ function autoload($class){
 }
 spl_autoload_register('autoload');
 
-// 添加路由
-// 获取url上的路径
-if(isset($_SERVER['PATH_INFO'])){
-
-    $pathInfo = $_SERVER['PATH_INFO'];
-    // 根据/转成数组
-    $pathInfo = explode('/',$pathInfo);
-
-    // echo "<pre>";
-    // var_dump($_SERVER);
-    // 得到控制器和方法名
-    $controller = ucfirst($pathInfo[1]).'Controller';
-    $action = $pathInfo[2];
-
+if(php_sapi_name() == 'cli'){
+    $controller = ucfirst($argv[1]) . 'Controller';
+    $action = $argv[2];
 }else{
+    // 添加路由
+    // 获取url上的路径
+    if(isset($_SERVER['PATH_INFO'])){
 
-    // 默认控制器
-    $controller = 'IndexController';
-    $action = 'index';
+        $pathInfo = $_SERVER['PATH_INFO'];
+        // 根据/转成数组
+        $pathInfo = explode('/',$pathInfo);
 
+        // echo "<pre>";
+        // var_dump($_SERVER);
+        // 得到控制器和方法名
+        $controller = ucfirst($pathInfo[1]).'Controller';
+        $action = $pathInfo[2];
+
+    }else{
+
+        // 默认控制器
+        $controller = 'IndexController';
+        $action = 'index';
+
+    } 
 }
+
 
 // 未控制器添加命名空间
 $fullController = 'controllers\\'.$controller;
