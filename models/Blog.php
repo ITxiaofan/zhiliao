@@ -119,5 +119,31 @@ class Blog{
         // 把页面生成到静态页中
         file_put_contents(ROOT.'public/index.html',$str);
     }
+    // 从数据库中取出浏览量
+    public function getDisplay($id){
+        $stmt = $this->pdo->prepare("SELECT display FROM blogs WHERE id=?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_COLUMN);
+        // 使用日志ID 拼出键名
+        $key = "blog-{$id}";
+         // 连接redis
+         $redis = new \Predis\Client([
+            'scheme' => 'tcp',
+            'host' => '127.0.0.1',
+            'prot' => 6379,
+        ]);
+
+        if($redis->hexists('blog_display', $key)){
+            //    累加并返回添加完之后的值
+               $newNum = $redis->hincrby("blog_display",$key,1);
+               return $newNum;
+           } else{
+
+              $display++;
+            //    加到 redis
+            $redis->hset("blog_display",$key,$display);
+            return $display;
+           }
+    }
             
 }
