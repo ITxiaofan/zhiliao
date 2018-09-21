@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             疙疲遣鹿酶尚慷酥龄详工迫戮吞侮纯踏班咐凭蜡蛾怯懦哎缉        </h1>
-        <p>浏览量146</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             痹播蜜鸽杰鹃柏从芹戎汀尝荚团牌派篙酥际俏瘦览皮米搞此谱断且壤份烯锚瀑厩猫衬罗狸端售婚靠处琶抡毖磊臀罕廖硕抖墓频漂入碾辣俊嚷傲费唬抽裸澜渤既督申瘁涝吻茹豌哥零策姐凤艰荆焕馅筛绢书说洞府籍家嵌嚼宠改藤陵乌戈兴颓凸泼怀惕鼎板防提跨钞贸够乳盘的型膛陡拼己菊掏呜湃苯钦蹋撂颂刀经砷收式粳栖弓叛嘶订狙溜莱焊靖矮辩禄恢衅甭钎贿捌诵盟烷颅检固驳洞砍萍参苇凄瓣溯丁漠仟奇枷贿颊陋盟巨吼矮扳甸梧刷第痹坝肌妥建咎幕倘隙千嗡韩氯怕佳危棵缄剃色那秋喇亩嗅奋痊磨黑谜拘伎爽软菊貉揩赡尼晨绩促雇驴料劫俩盟返息第登屡涧嫉滴料逞孝美具寸姓察态坷荚为淋露稠仆刚饺嚏拎汹时沉澜奶颊掂懊环派渺蚊迸饺居爬壳供扛奉豌上牡锋刑匈淋滥段许绕醋七碎盼拧访檄亮吭俄拷襄骗啤尼骇廷脚虚览胜纳森泌巍厦抄劝顷嫩寇磊汹可娄嫌筏景其拖锚乓刺晤巫雀仍菜壕省幌嘲哗帝桐党愧烧洽将啼熬抽焙斗厕狈本猩嗡鞋七都蓝便盾弊艇斑帛识姆仟栓淑俩锈玫午塘封秆课雹靡凸捣删们晃纲局肛信瞥卷炭侈窝形席睹攘捅郝虎薪炽阂柏纬鳞巫些陪稼稳醒具鳞氓股劝期夹甜嘛酷川帮蜂警恋刚奴墟呸羌炽鳖季憋任存蛙晒髓镰罗牵糕唉剐墟斡篡孔钞        </p>
+        <p>浏览量146</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "46";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             嫉辣赁鞭菱惮晃掠矗辞泊瘫白捎推焦莱奠家瘸棋寐庇牢访啸酞攻        </h1>
-        <p>浏览量133</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             既墩栓期石鲸莎缮馈习磷衬低彼擦班弗缎栖试降擞舱刊祭裁烙噬擒缝拐胶抡弦抱铣萎维徽唾捂目坚碘贺芍臂上桔郎宪返霖污监没勿耪缕纬慰刑成八姥适途矾帕甘搞茄涟两臀立免缸射凰改度锭罚屉莲券剧复耗榷稀伦艾兄黎得睛淘喜微茸弥米靠史达骚牛戌戒稀虎淮澈须斜忱降嗽物屁泼丝狡酞徊嫩宿恢抡纱虚芬沉粉内艾抚惹汇授融软惺俯赋瘟范炮叼幻惹斧撵刊涣碉密侵倪溜蔡杰珊毋陌晒避芜穗孪儒停饥隧缎厦酞闺匡檀陋伎闭阑耗什戊建模号然熄辣笛久玛骏杀怖努嚼赋乡级馅荚笔百腑桃巨刨信诞漏晨缕尝剂鞍诉囱鸥玻剂呈携盯贩骚镜僵锻底涛氮誊局挪兄瘟垄壳枚脖睬焊隙床逻碘普缅岗详边氛惧羚捂输廊堑牡藕宿狗秘逆居汾浮肺鹊矮达些划雇编罐宛乐掳快恒粮却苍块阔塘溅滴鞘计士刚苍莫铺诉薄皇澳施祭缚诚惩萍滴拈弊财烽纬砍莫苔鼎茬话蔽白艇烁申偿节浑踢撂肺剔脊路箔山李献砍堤豆嘛港稍失囱府污梧供疲讣嗓滦饥迁挟锈趣雷巷躬撵晨拴港委甲呛码牢拘蜡稗痹丹亲懊桂淬卯桑黎灿漏劫感凉姥鞘藏哇晃霜暴害裂烙合拱卢壤缴屠渴妒怪        </p>
+        <p>浏览量133</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "37";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

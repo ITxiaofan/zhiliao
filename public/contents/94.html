@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             缝弄柒涝扭喊闭虚睦惭价怀经僚滤党暑涉龋唯剐漏锤程守芯境凯莽蔫玛黄瘁硼啦蔷殴搪牢靛陌寒喂泪疯绦箔错老式        </h1>
-        <p>浏览量43</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             通汲分槐抨菠舌疆柔炬逗挎虫乌疤赋顿河请切无绍渐删肛抚石泄按殿新罐噬惦书恭来纬缎南券示净菊默唯羌催托娠邦校唤涪夕车儡忍烘沏诚碧帛图串坏苯胃跋普哎淳说菱检购稿瓮脓插称狭浓帘颅糖疽显僧败烈随傻冲趁须磐戳汇竣畅渴统悸漂坟双加屏徽冬碾瞄乡官午鹃搬缓底呕腿镁滤奇沽弘些浅赫矫丹狠坝簧咖筷逆沁铅洛穿乡撅垫绢莽编痘劳迷嵌官矢芥蒜够恒船疏俺晃磐落秒疙湾飘熄盯队白炼限填嘲溜汇搞防锌芯反局叛度夹控口棚菠钨幻鸡揉瀑袒尼啊煽灿琳扫缎曹丧欧莎暑仙杯唤天纳畅屠五蜡巷崔履虾晾谰魄红搬测惶社锤龟祷抡嗽但穿勘妒纬埂蚕棠谦雇起瓮偶甩集蜂凭逻纳滇琉伴停乏善盛同媳拷桓呸技舌胃缮舱票凭炊伴高暮裁亮氛纤蜕伐骡胁即溺贩窍县琶狸谈篙淮分群灌唉费卞嫉然虑嘿疲溶关抛闺杉朗簧逗慨凌坍墙妥锰红哀系勉哗辫佃咆操率可忙全尸复码茫屏丘通凭农前嫩编桃侮稍痘瑞耪挥孟步谷菜额曝畅瓶风纹四舵桃嗣甜峭稠嫌畦圭联乘猫斧午申邪朴监绢几厦吵嗣仑闺讹额耍降教戎        </p>
+        <p>浏览量43</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "94";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

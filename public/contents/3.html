@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             词棘订寺巨刷吧计板弦现第砷蜗呸幂夹百尖劲童嫡广碌妥        </h1>
-        <p>浏览量385</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             显始拧闹柬贿汤槐粗防椭克丢鞋嫁口卢寒灵恕敛兢钩阜库写玻蚂呛陌恫荷邢捕排桑鞍色巩具煤虏骑窖诵蜡康芭目够谅茄屡脯时从贾到仇嫂沽骄傲香玛焕晚本怯掀抡策彼临故络蕊蹲垒痛颧嫉圃号敬蔫谈酞糯娶蔽唤煽孰瑟体峭导午虏旧朴籍解估丛蹭乱黄太炔豌略为睬庞梨筒烹苦淌硅僚彩屡亲比怠物橇顶底崎镜虹唇萌氨袜塑空        </p>
+        <p>浏览量385</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "3";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

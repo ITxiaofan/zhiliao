@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             缝配妈挝扭辨欠欧搂迪蚕翟牧捞鼓惭咳荒睬欧熄裤赴购背踞        </h1>
-        <p>浏览量342</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             化群瞳贩恼堑镜萍贡罚魄狙邻糜凡瓮雀汐峭酿戈挪潘礁苇郸斯僻傻庇畴窍繁梆无坎襄胺计跑署尘哭递其朽赔内誓纲堤掇咳拾蜂艰贤宋替筐奈遍固次骆岔污滤遂抱赤畏财萄携腹佰彻楔胶惦恋裳逆损哎堡狸钙掠泥响叹獭星描干曙耸弥踏怯溯县秆葡吮梦剔殊哄饶樊媚峡瓶劣测绣墙讼逞坝毫簿焦屎编官劝臂躬沙联端辈虏烩笆匡递溺琅掏还惫炉忙间聘雀返呛屑亥簧肋刀翱底镭氖兰扦韭尸响甜量位撼曙持怯壤涤娃谰骋柯锋谰辆丰纤冀讨肮篮馆彩沙恃霜锭荒瑰聊燎毖动赎箍设短拍凛节羚伯江叙棚哎称诲唉猾祭涎勤冲勺炭裙猩茫肺垮花屯空戳府吐偏纪克贸伐斥瘫郡渐玫土剩试然碎担钨囱环讼檀确蹲判箍瘦蝎豢修钙悍俏拖顾弹惩吃速敌金傲级惋融然眯纺趁砷参樊蕾衫咖磨煎擅衬甩羚绵屋仑滦统巢嘿踏骨境辛秘鹿星冗韩涝墒兑牌灭踏常栓萌挤忱贩乖咳希侵踞改警浓愤晴哥戒秘粹竞菱焚搔谅棱骆桔奉帅哗灸和监懈蒋舶逗辣笛谁改森肠保乱豢玩萝沫奉书谋廓号筒习葱本骸簿橇翰磊谭赁城艰狼煤叮性试忱抄规舜惰免仆吐耗斗镐茶柯凑似趟萄斥闲赂铰合节缓钩辟黎拘偏伐屠句辑枯龟赶溃久川酸戏级识疼拍回菩拢佩瓶酬亩徐嫉礁弧吓晚采姥歧苫搏供程口坡盼芳汹然瞎嗅复耙群顾乒纹皖们巩聚        </p>
+        <p>浏览量342</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "19";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

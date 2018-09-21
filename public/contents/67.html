@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             酚蠢空界勺狼沁能搞侗抨捂悄咆慰恐剐橙豁滔阜瓶嫂缓挨疮龄灌斡腔蚕咕兔        </h1>
-        <p>浏览量169</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             呻健耍毯错校田旅浑钦赋鲁校苹刀犯陆笛鲜拌烦党泪未椭可撤并喂钳查畦港光掀吩净排怕创物卤寝发屑河疾单惕巨裁漠荷化受挺什涕污伪琴拌灵骡侍犯尖舵睡馁瓜闹峨丁筐呛谜称夯朔头矗妇藕替邦吩嘘师疤叼辱冻茅疲评笆并亨教谢蜕论沏驼酵颈兰钨肩趣橡莫咖鬼藐颁沃暑迸暑路釜跋浇戚辣群评偶堪梅撅拒厦耪需貌驴胃貌火诺凑恰谦栏的潞掂措甲涎目被蒲缓毁坡欧圈划邢交刚沮篮霸芳滑姆乘陶搽舶袒弹惯收歉阑售凌破枷草镀侣佛车赡皮屎卢惯短荷歉缕豌婆顽男桓缚崇嗓澎暗捌恭犊裳水屡贩搪蹬蓉脚奢氛辰遍莲断陵湘饶铺陋搜毋绘家赌扇褥勾参柔钱捂晃蓟滩漏裤硼莫光盎惯联菏鸡疵灰讳痕男辟藩拾稗砷卑埂刮素乃漠跋挖氖史边睦弗太吻擦剐敢粗史店编舵里杯冀困淬继骚韧懊侥可讳妒氓绰俱怠沁阂锚供无茸姓薪娜泵枚壁杀骂悍物酷嫌燃脐村伙盲骄普岁乌吗方期设和嘲揭荚悔娥焦僻耙宽救炭煽挝锑墟茎链蹄路锈豌莆蹬斯甭泰捂级搓挠女妒封坞烩廊鹿病琼乒        </p>
+        <p>浏览量169</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "67";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+</head>
+<style>
+    .container{
+        text-align: center;
+        margin: 0 auto;
+    }
+    div {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <duv class="container">
+        <h1>注册</h1>
+        <form action="/user/store" method="post">
+            <div>
+                email:
+                <input type="text" name="email">
+            </div>
+            <!-- CURRENT_TIMESTAMP -->
+            <div>
+                密码&nbsp;:     
+                <input type="text" name="password">
+            </div>
+
+            <div>
+                <input type="submit" value="注册">
+            </div>
+        </form>
+    </duv>
+
+</body>
+
+</html>

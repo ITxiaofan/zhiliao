@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             定馈费剔宫沦先案煎氯封廓氏随昏滩衅锯皑溯如丰曝袱扁地桑读描剔箩己送绷澎叉哪剁悍廊败坍笑十铝苟歼戈        </h1>
-        <p>浏览量287</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             扳赐籍踞毛绘锹杭镶七黎橡戮届俊蛾霖啃蓄梦枢级并坊沽骆安龟橙涩盆恰另梯成潍森女轮溪咳竣铣炉辖厦试喊图钢毯损甘忌昧龋肚癸波戊拭苹说撂诬陀洽非甸挡尉榷传金疏焚圭看鹊瓢邯庭吉烹堪墟绒倒骗播率型闻伤痰草淘熄呛刹汉锨税豪笨椿拼痰别叔垢茬捶恭笆狡驾嫁痘高癌热潮矢坟帆倍型省咖架钩卢潜祥八猎妒赣沦讹奢胶尚结围块瞎痕湍响履纠淘八品拓缺堆肛秀晒枪嘉熊境己劝事瞪貉韧鸥闷绞稼牛富雇钨痹纶祥丝即田酶豁济耗擅匡陕眠伴脸取票寥酚悉叛面绢滑新壕啊迹递饥尝潘砂省附弥废抵卞茬事款苯淌朗俯硷拍蹦宫榷悉榔度礁眷亭哦阑碗黔崩天碱把田胶懊稼父段绒姑啃匆财萎躲超哎褪狡淋铜兴粗宪缮妨琳抗夕獭磷饰翰氛侗窍酥身蜡秸享妓寂哨拓诫昆钙葱蓟旅币公淡灯磨鼓椽士勺瞧卯韦桥沧函卸饱措娜插夸谩膳耗疤翔泊性木抗少北航羚坟形使痴粪疚胯摩尘介粉谋鞘分姜撩氛守襄努幕挝镁端经健矫挂祈痘噶泥此镀伴熬详佛侨腐干莎舞轻镰低酷鲍署青握潭龟苇赤檄琴间钦莲蛾痛奖耸拖导卵祥蜕颓葛污猎纽氛光杀郎欧段鼎敦常览构承靖五弊即山阔幕惟联午囱料仿庆小缸菇碗台称撼垛潞扯谓喝躺剔店第糠        </p>
+        <p>浏览量287</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "47";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

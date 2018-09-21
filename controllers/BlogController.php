@@ -46,9 +46,14 @@ class BlogController{
             echo $display;
            }
     }
-    // public function display(){
-    //     // 接收日志ID
-    //     $id = $_GET['id'];
-        
-    // }
+    public function display(){
+        // 接收日志ID
+        $id = $_GET['id'];
+        $blog = new Blog;
+       echo $blog->getDisplay($id);
+    }
+    public function displayToDb(){
+        $blog = new Blog;
+        $blog->displayToDb();
+    }
 }

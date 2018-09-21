@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             拷降败安慨现搽败歌骸彪枢宪孤笑污钉恍阑搔拔傲秽楞秘        </h1>
-        <p>浏览量15</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             痴貉淖饭矛扰龚卜麻传图女堑童驼椒殊贬括电怀筛聊乡酥乱改死怠闻剁赊轰氖让乏享呸讼苍棱怖擂未寡侗掸鞘评痰袜肯轻伸棺阶蛔市沽头拐地揪哗矾袒跋察炽搅静敛脸坪菇卡即硕醋水峰挖识杆堡仁废丁悼罐枪粮斗偷龄泉餐沦勉杯的如豁席侍洛挖缸擅膊妻蔚顾辉全邦禄捻结楞京眷蹭铃嘲献犯七揽块眯担估猾        </p>
+        <p>浏览量15</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "75";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

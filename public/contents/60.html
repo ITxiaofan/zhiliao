@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             蒂狭唱邪底竞豆吴虏澎迷恃戮拱刷撩炊颗期魔腑晚成桂獭填喘晌馅贩够烯卷痊淀烁薄坚        </h1>
-        <p>浏览量161</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             娜瓤唐鸿山俄拆害扩庙辟该四瞥娜柒喂夸反纪伍疲良持矫凉可猩茸授孝石切入倒会祭纲蛾读甩蓄瓷碱拧度誊惫褐盟灸棘苹河加挝溅裤钮另骄绿墙脱漏骡剧祁郎卯恰颅氖棱轨叭拖跑脾鞭下红陷秋票圣淋灿箍磨寥篓说孟廖坍如夸饰铂妊臀抡适双度回问趟文觅慷北蚊抛棠搭两殴旁咖辱卑附筒笨抬玲惕晃忱洁汗夺恫铃社督拌五色泊母琶尺恢母挡妓叹抽湃桥皇琅辉恭仆滦澈汝莫曝回粳波囊围厂宏世光哀粗川汇屠熄獭悉炕秸方度呵拖惩掀庆敬欣手唯差匿室笑伎培瓤储沮啡盼氯馈韦搓禄蔫涝拿眠匆拳玖耸韩亢方权颗拖储缎仓棚灯布缸颁通冕铂狄胸烯涎翠猛衰悔土扒清厂截奇谈戎叉谱检璃葱晨星默茹父蓖桂缝煌到哭杯烽惨就滇踢蚕猜酗写密戮苇乱痘鞍规理惩吩导慨膊修儒        </p>
+        <p>浏览量161</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "60";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

@@ -121,9 +121,7 @@ class Blog{
     }
     // 从数据库中取出浏览量
     public function getDisplay($id){
-        $stmt = $this->pdo->prepare("SELECT display FROM blogs WHERE id=?");
-        $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_COLUMN);
+        
         // 使用日志ID 拼出键名
         $key = "blog-{$id}";
          // 连接redis
@@ -135,15 +133,33 @@ class Blog{
 
         if($redis->hexists('blog_display', $key)){
             //    累加并返回添加完之后的值
+            // hincrby 把值加1
                $newNum = $redis->hincrby("blog_display",$key,1);
                return $newNum;
            } else{
-
-              $display++;
-            //    加到 redis
+                $stmt = $this->pdo->prepare("SELECT display FROM blogs WHERE id=?");
+                $stmt->execute([$id]);
+                $display = $stmt->fetch(PDO::FETCH_COLUMN);
+                $display++;
+            //    加到 redis    hset  保存到redis中
             $redis->hset("blog_display",$key,$display);
             return $display;
            }
+    }
+    public function displayToDb(){
+        // 先取出数据库中取出所有浏览量
+         // 连接redis
+         $redis = new \Predis\Client([
+            'scheme' => 'tcp',
+            'host' => '127.0.0.1',
+            'prot' => 6379,
+        ]);
+        $redis->hgetall('blog_display');
+        // 更新回数据库
+        foreach($data as $k => $v){
+        $sql = "UPDATE blogs SET display={$v} WHERE id = {$id}";
+        $this->pdo->exec($sql);
+        }
     }
             
 }

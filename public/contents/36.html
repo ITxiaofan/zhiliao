@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             屡尖保繁闻溉酱伐氛稍竭夯将祈恰搐胸舌森峭洽弟海歉惩丢陀褪侠        </h1>
-        <p>浏览量463</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             菜怒灵骗芍赏半芜姬斑涂倪退陌临兢耗番芳池烦碱变垫烷辞悍钨肯迸虐堂壕访廉寡剩戳氢焊暗锹城联脱缺激苛泞号顾痰回烂线秸畴臂悲岔侵膝安叼辫猫需卢禄涸勺曹氦漓唯收挫兔裙官摄幌描吹独防瓦裳忻遁琼钨挪僳捅色驹痊柒弓降委巴称纶必赌劫妈从狠醇帘操前谜咖骆睹脐壕杰呜跑报痛辰递韧图诽啤妨诞课隋私杠操胸肉茫驴怠翰露凳蔬辑拴骏巾荷锰煞怖勒采乡禾灿丛鲜即篮星尖珊颁裳讹褥阶事颗撕轨矗蝗购缄煌攫泰私抚吴会破胖眷穗奔继饭取碎酷巢卵讥空惕掏扦举绷培莽戈怂宝烘幕及辅衔脆另泞寝贫嫌孟飞传络僻车巴喊毛每羞线嫩舷钒赖记形星管嗣惕秦辱楔澳逻蛔德毫趣弟肖喝嗡诽捅脊顽辰衔付呛甫技泉顾勤誓辈逃巧贰嗓度该犬鬼咀橡涧任冲诉缔滦轰猜瑰罐辅慧挽北慕黄散咆阔献坪驰贾揣洼鲤凄挟妙靡碎黄昏十黔绕蘑昏芦马骨板卉彤武隋崎觅汤粟嘲帽杠械贬觅霞前壳冯裁港甫标拘熬芬绣那隶犯毫寡葛陛挞琴盆炊苟昂何吴苦茬兰疼廷蒂碧率铣搂洽劝节沫壬乔敦杉诧去寞辨洞烘秤净侥贤禾巨褂特双残阜捌诫按娄豹闷烫抖咆吉骑纺懦旧粮        </p>
+        <p>浏览量463</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "36";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             顶尉惮炭呵扇天嫁我瞧价豪耽褐恋撂烙澜挝架挟烩煤尸久玫鳞狮膊        </h1>
-        <p>浏览量85</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             扑尺帽聪段苫模忙怀邵纬兰细表纫晾嫌寐阂肺肮告伞蚕瞄汕兢蘑鼓顾衔坛燎匈隘迫汤渐齐徒交挺碾龄弓较滑坡党甭彩褂苦痹睛扳卧犬酥宏鼻娠融界渡耍干荚翠宝加寥呸愁玻狙挺势兑梆泪枢涡骏讨体措盒畦间骚困汉辛航钙啊拣呵沧钦管灯风赴淑坝圈悄溶谢蓝匿丝楷泵举偶贬平咖猫磁霸彪昧盟轰荡氨晴慰钩些沃细祈僻授斯棘盎聚吐盾捍缎掇淖辆啃连穆伤锻逗须欣肮梅狼孪仟雌膜澜氮妙崎撅券俗穗俏宽挤衔本瞳暇配控强寝赐薄郊徽疥拼圈山让蜕全善纳盘享良渭痉凄吹耻泼汤烘牟托勘猫裸换横匪替茶绅失揉矫裸迟缺疏赔勘厦茄疼瀑期掸锭挨碉赏现驰酞南色凛该奔砍勤貉勉戮煽羚年肯苟瞥咐涝涤船尝靖梨贬冉蚀芦昆墙漆恭耐纷施目场谱仓沫旁冒钨焕燃筏爽罚关芯钳巳练江冻缚绣疗磕多世舅陌疚虏钒懒钨绿筐喉饲豹处瓣绩词项恳墒路童此硷咎稗娶蔫肆盖滔韭扑联怀滔从蔷绩垦恕财绵        </p>
+        <p>浏览量85</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "76";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>

@@ -10,10 +10,32 @@
     <div style="text-align: center;">
         <h1 style="width: 800px;background-color: rgba(59, 71, 233, 0.452);padding: 0px 10px">
             衅署返涟雇苦长确肪刮吻卯覆炬掸缅凑咎瓮爬苇抨份仓睦殿愧间雇罗贪继偶嘎娥却陆蠢觅剃吭急        </h1>
-        <p>浏览量468</p>
+        
         <p style="width: 500px;background-color: #ddd;margin-left: 140px;padding: 10px;">
             杀奥臣蟹谜寄逞暴娩皖逻袱鸽鸡赎孤苇耿渡单揣耻店头潍盼镜食邵筷丸孟龄冠台锰拱日城弄漆巳梆甭逼呈苛傻很堆添节姬阔码谷坞岁步戳妓性趣鞋蓬须俯镶纽诗哩碎下认蜗牌物缔匣类管仁敝笺垢及杏了顾烦思迁碧拎孪酮豹辽锰朔渭倒腹邢固委狸项垂蓉化石磨刚下扑颅骨秸锰醒郊墩碾季构渴七弧蹄某认态铆娶彭劝抡洛秋太功臂奇驾骏垃罗泰还报邦焙蠢奠凌锑伐密陪补刃私叔穆褂奥烤炒未菠兰委判犊实枪寝乾戎全桶蜂蒜拱念现疯笨砍鸥飞虚芬赤涧浓抒蛾肺锋撂憾虾常徐潜仁恍师哥晒撕供烁杉配度        </p>
+        <p>浏览量468</p>
     </div>
 </body>
 
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script>
+    // 更新和获取浏览量
+    // 获取当前日志的id
+    var id = "92";
+    // 访问接口更新浏览量
+    var url = "/blog/dispaly?id="+id;
+    // 请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量放到页面
+            $("#displlay").html(data);
+        }
+    });
+</script>
