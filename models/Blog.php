@@ -1,14 +1,8 @@
 <?php
 namespace models;
-use PDO;
-class Blog{
-    public $pdo;
-    public function __construct(){
-        // 连接数据库
-       $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=blog1','root','123456');
-        // 设置编码
-       $this->pdo->exec('SET NAMES utf8');
-    }
+class Blog extends Base
+{
+  
     public function search(){
         
         /*****************搜索******************* */
@@ -28,7 +22,7 @@ class Blog{
             $where .= " AND is_show = '{$_GET['is_show']}'";
         }
         // 执行sql语句
-        $stmt = $this->pdo->query("SELECT * FROM blogs WHERE $where");
+        $stmt = self::$pdo->query("SELECT * FROM blogs WHERE $where");
         // 获取错误信息
         // $error = $pdo->errorInfo();
         // echo "<pre>";
@@ -52,7 +46,7 @@ class Blog{
         // 计算开始的下标
         $offset = ($page-1)*$perpage;
         // 制作按钮
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM blogs WHERE $where");
+        $stmt = self::$pdo->prepare("SELECT COUNT(*) FROM blogs WHERE $where");
         $stmt->execute($value);
         $count = $stmt->fetch(PDO::FETCH_COLUMN);
         // var_dump($count);
@@ -73,7 +67,7 @@ class Blog{
         }
 
         // 预处理
-        $stmt = $this->pdo->prepare("SELECT * FROM blogs WHERE $where ORDER BY $odby $odway LIMIT $offset,$perpage");
+        $stmt = self::$pdo->prepare("SELECT * FROM blogs WHERE $where ORDER BY $odby $odway LIMIT $offset,$perpage");
         // 执行SQL
         $stmt->execute($value);
         //取出数据
@@ -84,7 +78,7 @@ class Blog{
         ];
     }
     public function content2html(){
-        $stmt = $this->pdo->query('SELECT * FROM blogs');
+        $stmt = self::$pdo->query('SELECT * FROM blogs');
         $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         ob_start();
@@ -105,7 +99,7 @@ class Blog{
     }
     public function index2html(){
         // 取20  条记录
-       $stmt =  $this->pdo->query("SELECT * FROM blogs ORDER BY id DESC LIMIT 20");
+       $stmt =  self::$pdo->query("SELECT * FROM blogs ORDER BY id DESC LIMIT 20");
         $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // 开启缓冲区
         ob_start();
@@ -125,11 +119,7 @@ class Blog{
         // 使用日志ID 拼出键名
         $key = "blog-{$id}";
          // 连接redis
-         $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
 
         if($redis->hexists('blog_display', $key)){
             //    累加并返回添加完之后的值
@@ -137,7 +127,7 @@ class Blog{
                $newNum = $redis->hincrby("blog_display",$key,1);
                return $newNum;
            } else{
-                $stmt = $this->pdo->prepare("SELECT display FROM blogs WHERE id=?");
+                $stmt = self::$pdo->prepare("SELECT display FROM blogs WHERE id=?");
                 $stmt->execute([$id]);
                 $display = $stmt->fetch(PDO::FETCH_COLUMN);
                 $display++;
@@ -149,16 +139,12 @@ class Blog{
     public function displayToDb(){
         // 先取出数据库中取出所有浏览量
          // 连接redis
-         $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
         $redis->hgetall('blog_display');
         // 更新回数据库
         foreach($data as $k => $v){
         $sql = "UPDATE blogs SET display={$v} WHERE id = {$id}";
-        $this->pdo->exec($sql);
+        self::$pdo->exec($sql);
         }
     }
             

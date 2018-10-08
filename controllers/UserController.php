@@ -50,11 +50,7 @@ class UserController{
         // $email = new \libs\Mail;
         // $content = "恭喜您,注册成功！";
         // 连接redis
-        $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
         // 发邮件
         $redis->lpush('email',$message);
 

@@ -24,11 +24,7 @@ class BlogController{
     public function upadte_display(){
         $id = $_GET['id'];
         // 连接redis
-        $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
         // 拼接日志键
         $key = "blog-{$id}";
 

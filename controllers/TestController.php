@@ -15,11 +15,7 @@ class TestController{
         // 注册成功
 
         // 发邮件
-         $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
         // 消息队列的信息
         $data = [
             'email' => 'ITXIFAN@126.com',
@@ -37,11 +33,7 @@ class TestController{
         ini_set('default_socket_timeout',-1);
         echo "邮件程序已启动。。。等待中。。。";
         // 连接redis
-        $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        $redis = \libs\Redis::getInstance();
         // 监听一个列表
         while(true){
             // 从列表中取数据，设置为永久不超时

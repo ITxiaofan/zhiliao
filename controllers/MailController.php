@@ -4,12 +4,7 @@ use libs\Mail;
 class Mailcontroller{
     public function send()
     {
-        // 连接redis
-        $redis = new \Predis\Client([
-            'scheme' => 'tcp',
-            'host' => '127.0.0.1',
-            'prot' => 6379,
-        ]);
+        
         $mailer = new Mail;
         // 设置 socket 永不超时
         ini_set('default_socket_timeout', -1); 
